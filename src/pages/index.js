@@ -1,16 +1,19 @@
 import React from "react";
 import Helmet from "react-helmet";
+import 'video-react/dist/video-react.css'; // import css
+import { Player } from 'video-react';
 
 import Layout from '../components/layout';
 
-import pic01 from '../assets/images/pic01.jpg'
+import pic01 from '../assets/images/covid/pic01.jpg'
 import pic02 from '../assets/images/pic02.jpg'
 import pic03 from '../assets/images/pic03.jpg'
 import pic04 from '../assets/images/pic04.jpg'
+import video01 from '../assets/videos/sintomas-covid-19-sign-language.mp4'
 
 class Homepage extends React.Component {
     render() {
-        const siteTitle = "Gatsby Starter - Photon";
+        const siteTitle = "Covid 19 ";
 
         return (
             <Layout>
@@ -24,13 +27,31 @@ class Homepage extends React.Component {
                                 amet dolor consequat</h2>
                             </header>
                             <p>Adipiscing a commodo ante nunc accumsan et interdum mi ante adipiscing. A nunc lobortis non nisl amet vis sed volutpat aclacus nascetur ac non. Lorem curae et ante amet sapien sed tempus adipiscing id accumsan.</p>
+                            <p><a href="https://www.who.int/es">OMS</a></p>
+                            {/*Sintomas de la enfermedad: https://who.canto.global/b/JKJTT */}
                         </div>
                         <div className="col-6">
                             <span className="image fit"><img src={pic01} alt="" /></span>
                         </div>
                     </div>
                 </section>
-
+                <section id="one" className="main style1">
+                    <div className="grid-wrapper">
+                        <div className="col-6">
+                            {/* <Player playsInline src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4" /> */}
+                            <Player playsInline src={video01} />
+                        </div>
+                        <div className="col-6">
+                            <header className="major">
+                                <h2>Sintomas de la enfermedad<br />
+                                amet dolor consequat</h2>
+                            </header>
+                            <p>Adipiscing a commodo ante nunc accumsan et interdum mi ante adipiscing. A nunc lobortis non nisl amet vis sed volutpat aclacus nascetur ac non. Lorem curae et ante amet sapien sed tempus adipiscing id accumsan.</p>
+                            <p><a href="https://www.who.int/es">OMS</a></p>
+                            
+                        </div>
+                    </div>
+                </section>
                 <section id="two" className="main style2">
                     <div className="grid-wrapper">
                         <div className="col-6">

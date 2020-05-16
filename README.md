@@ -1,3 +1,7 @@
+# Sources of Information:
+*Sintomas de la enfermedad: https://who.canto.global/b/JKJTT 
+
+
 # gatsby-starter-photon
 
 Gatsby.js V2 starter based on the Photon site template, designed by HTML5 UP. Check out https://codebushi.com/gatsby-starters-and-themes/ for more Gatsby starters and templates.
