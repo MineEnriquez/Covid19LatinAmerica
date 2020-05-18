@@ -24,10 +24,22 @@ class Homepage extends React.Component {
                     <div className="grid-wrapper">
                         <div className="col-6">
                             <header className="major">
-                                <h2>Lorem ipsum dolor adipiscing<br />
-                                amet dolor consequat</h2>
+                                <h2>Mantenerte informado <br />
+                                ayuda a proteger a tu familia</h2>
                             </header>
-                            <p>Adipiscing a commodo ante nunc accumsan et interdum mi ante adipiscing. A nunc lobortis non nisl amet vis sed volutpat aclacus nascetur ac non. Lorem curae et ante amet sapien sed tempus adipiscing id accumsan.</p>
+                            <p>El brote mundial del NUEVO virus Covid19 ha traído como resultado diversas
+                            medidas que tanto el gobierno como la sociedad deben adoptar.
+                            En un evento sin  precedente, la sociedad a nivel mundial ha tenido que
+                            implementar el distanciamiento social en un esfuerzo por disminuir
+                                el esparcimiento del mismo.  <br />
+                                Porque es tan importante evitar ser contagiado?
+                                <li>No hay vacuna ni tratamiento especifico</li>
+                                <li>Si tienes el virus puedes infectar a más personas</li>
+                                <li>Puede causar la muerte</li>
+                                <li>No hay suficiente información sobre los daños que pueda causar al organismo</li>
+                                <li>Podrías tener el virus y no presentar síntomas</li>
+                                <li>Si presentas síntomas, estos pueden presentarse de uno a doce dias después de haberte infectado</li>
+                            </p>
                             <p><a href="https://www.who.int/es">OMS</a></p>
                             {/*Sintomas de la enfermedad: https://who.canto.global/b/JKJTT */}
                         </div>
@@ -39,11 +51,10 @@ class Homepage extends React.Component {
                 <section id="sintomas" className="main style1">
                     <div className="grid-wrapper">
                         <div className="col-6">
-                            {/* <Player playsInline src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4" /> */}
-                            <Player 
-                            playsInline
-                            poster={covidpic02}
-                            src={video01} />
+                            <Player
+                                playsInline
+                                poster={covidpic02}
+                                src={video01} />
                         </div>
                         <div className="col-6">
                             <header className="major">
@@ -51,11 +62,12 @@ class Homepage extends React.Component {
                             </header>
                             <li>Tos</li>
                             <li>Problemas para respirar</li>
-                            <li>Fiebre</li>
+                            <li>Fiebre alta</li>
                             <li>Escalosfrios</li>
                             <li>Dolor de cuerpo</li>
                             <li>Garganta irritada</li>
                             <li>Problema para percibir olores</li>
+                            <li>Neumonía</li>
                             <p><a href="https://www.who.int/es">OMS</a></p>
                         </div>
                     </div>

@@ -8,11 +8,10 @@ class Header extends React.Component {
                     <span className="icon major fad fa-heart"></span>
                     <h1>El <strong>Planeta</strong> somos todos nosotros<br />
                     y necesita de nuestra ayuda!</h1>
-                    <p>Tenemos la tecnologia, tenemos los medios, hagamoslo...<br />
-                    veamos en la actual situacion una oportunidad para encontrarnos unos a otros <br />
-                    unidos por el bien de la humanidad</p>
+                    <p>Tenemos la tecnología, tenemos los medios para lograrlo, hagámoslo...<br />
+                    unidos por el bien de la humanidad.</p>
                     <ul className="actions">
-                        <li><a href="#one" className="button scrolly">Descubre como hacerlo</a></li>
+                        <li><a href="#one" className="button scrolly">EXPLORA</a></li>
                     </ul>
                 </div>
             </section>
