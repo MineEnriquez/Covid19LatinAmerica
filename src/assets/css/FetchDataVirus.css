@@ -1,0 +1,12 @@
+/* Main */
+
+
+.xsmall-text{
+    font-size: x-small;
+}
+.small-text{
+    font-size: medium;
+}
+.right-justified{
+    justify-content: right;
+}
