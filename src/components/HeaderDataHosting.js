@@ -7,7 +7,7 @@ class HeaderDataHosting extends React.Component {
                 <div className="inner">
                     <h1><strong>Reporte de occurencia</strong><br />
                     </h1>
-                    <p>Los valores en esta tabla reflejan los ultimos datos reportados hasta la fecha bajo la columna 'Ultima actualizacion', ordenados por casos confirmados.</p>
+                    <p>Informacion official proveida por la Johns Hopkins University, Estados Unidos</p>
                     <ul className="actions">
                         <li><a href="#one" className="button scrolly">ESTADISTICAS</a></li>
                     </ul>
