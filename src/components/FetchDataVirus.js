@@ -27,7 +27,6 @@ class FetchDataVirus extends Component {
       .then(data => {
         var sum = 0;
         var cases = 0;
-
         for (var i = 0; i < data.data.covid19Stats.length; i++) {
           sum = sum + data.data.covid19Stats[i].deaths;
           cases = cases + data.data.covid19Stats[i].confirmed;
@@ -35,8 +34,10 @@ class FetchDataVirus extends Component {
             if (this.countries.indexOf(data.data.covid19Stats[i].country) === -1) this.countries.push(data.data.covid19Stats[i].country);
           }
           data.data.covid19Stats[i].confirmed = data.data.covid19Stats[i].confirmed.toLocaleString("en-US");
-
+          
         }
+        var newdate = data.data.covid19Stats[0].lastUpdate.toLocaleString("en-US", { weekday: 'short', month: 'short', day: 'numeric', hour: 'numeric' });
+        console.log(newdate);
         
         this.setState({
           forecasts: data.data.covid19Stats,
