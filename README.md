@@ -1,6 +1,9 @@
 # Sources of Information:
 *Sintomas de la enfermedad: https://who.canto.global/b/JKJTT 
 
+# Api
+    Source: https://rapidapi.com/KishCom/api/covid-19-coronavirus-statistics/details
+    Params: country=MyCountryName
 
 # gatsby-starter-photon
 
