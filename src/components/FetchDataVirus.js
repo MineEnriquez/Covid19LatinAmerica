@@ -78,7 +78,6 @@ class FetchDataVirus extends Component {
                 <td>{forecast.country}</td>
                 <td>{forecast.province}</td>
                 <td>{forecast.city}</td>
-
                 <td>{forecast.confirmed}</td>
                 <td>{forecast.deaths}</td>
                 <td>{forecast.recovered}</td>
@@ -124,9 +123,9 @@ class FetchDataVirus extends Component {
             </select>
           </div>
         </div>
-        <p className='small-text'>Los valores en esta tabla incluye los ultimos datos en <strong>{this.pais}</strong> reportados hasta <strong> {this.state.lastUpdate} </strong>, y ordenados por casos confirmados. <br />
-        * This program uses an API with publicly available data about current confirmed cases, deaths, and recoveries of the COVID-19 virus AKA Coronavirus compiled by Johns Hopkins University. </p>
+        <p className='small-text'>Los valores en esta tabla incluye los ultimos datos en <strong>{this.pais}</strong> reportados hasta <strong> {this.state.lastUpdate} </strong>, y ordenados por casos confirmados.</p>
         {contents}
+        <p> * This program uses an API with publicly available data about current confirmed cases, deaths, and recoveries of the COVID-19 virus AKA Coronavirus compiled by Johns Hopkins University. </p>
       </div>
     );
   }

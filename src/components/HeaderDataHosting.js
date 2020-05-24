@@ -7,7 +7,6 @@ class HeaderDataHosting extends React.Component {
                 <div className="inner">
                     <h1><strong>Reporte de occurencia</strong><br />
                     </h1>
-                    <p>Informacion official proveida por la Johns Hopkins University, Estados Unidos</p>
                     <ul className="actions">
                         <li><a href="#one" className="button scrolly">ESTADISTICAS</a></li>
                     </ul>
