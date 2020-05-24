@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Countries from './countries';
+import moment from 'moment';
 class FetchDataVirus extends Component {
   static displayName = FetchDataVirus.name;
   
@@ -36,15 +37,12 @@ class FetchDataVirus extends Component {
           data.data.covid19Stats[i].confirmed = data.data.covid19Stats[i].confirmed.toLocaleString("en-US");
           
         }
-        var newdate = data.data.covid19Stats[0].lastUpdate.toLocaleString("en-US", { weekday: 'short', month: 'short', day: 'numeric', hour: 'numeric' });
-        console.log(newdate);
-        
         this.setState({
           forecasts: data.data.covid19Stats,
           loading: false,
           total: Number(sum).toLocaleString("en-us"),
           totalCases: Number(cases).toLocaleString("en-us"),
-          lastUpdate: data.data.covid19Stats[0].lastUpdate
+          lastUpdate: moment(data.data.covid19Stats[0]).format('MMMM Do YYYY, h:mm:ss a')
         });
         console.log("Sample record", data.data.covid19Stats[0]);
         console.log("total paises:", this.countries.length);
