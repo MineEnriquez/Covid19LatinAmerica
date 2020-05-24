@@ -3,7 +3,7 @@ import Countries from './countries';
 import moment from 'moment';
 class FetchDataVirus extends Component {
   static displayName = FetchDataVirus.name;
-  
+
   constructor(props) {
     super(props);
     this.state = { forecasts: [], loading: true, total: 0, totalCases: 0, paises: [], lastUpdate: "", selectedCountry: "All" };
@@ -31,18 +31,18 @@ class FetchDataVirus extends Component {
         for (var i = 0; i < data.data.covid19Stats.length; i++) {
           sum = sum + data.data.covid19Stats[i].deaths;
           cases = cases + data.data.covid19Stats[i].confirmed;
-          if (this.countries.length<189) {
+          if (this.countries.length < 189) {
             if (this.countries.indexOf(data.data.covid19Stats[i].country) === -1) this.countries.push(data.data.covid19Stats[i].country);
           }
           data.data.covid19Stats[i].confirmed = data.data.covid19Stats[i].confirmed.toLocaleString("en-US");
-          
+
         }
         this.setState({
           forecasts: data.data.covid19Stats,
           loading: false,
           total: Number(sum).toLocaleString("en-us"),
           totalCases: Number(cases).toLocaleString("en-us"),
-          lastUpdate: moment(data.data.covid19Stats[0]).format('MMMM Do YYYY, h:mm:ss a')
+          lastUpdate: moment(data.data.covid19Stats[0]).format('MMMM Do YYYY, h:mm:ss A')
         });
         console.log("Sample record", data.data.covid19Stats[0]);
         console.log("total paises:", this.countries.length);
@@ -110,16 +110,21 @@ class FetchDataVirus extends Component {
           </div>
         </div>
         <div>
-          <select
-          defaultValue={this.state.selectValue} 
-            name="country"
-            onChange={this.handleChange} >
-            {this.countries.map((e) => {
-              return <option key={e} value={e}>{e}</option>;
-            })}
-          </select>
+          <div className="col-4">
+            Filtro:
+          </div>
+          <div className="col-8">
+            <select
+              defaultValue={this.state.selectValue}
+              name="country"
+              onChange={this.handleChange} >
+              {this.countries.map((e) => {
+                return <option key={e} value={e}>{e}</option>;
+              })}
+            </select>
+          </div>
         </div>
-        <p className='small-text'>Los valores en esta tabla reflejan los ultimos datos reportados hasta  {this.state.lastUpdate} ordenados por casos confirmados. <br />
+        <p className='small-text'>Los valores en esta tabla incluye los ultimos datos en <strong>{this.pais}</strong> reportados hasta <strong> {this.state.lastUpdate} </strong>, y ordenados por casos confirmados. <br />
         * This program uses an API with publicly available data about current confirmed cases, deaths, and recoveries of the COVID-19 virus AKA Coronavirus compiled by Johns Hopkins University. </p>
         {contents}
       </div>
