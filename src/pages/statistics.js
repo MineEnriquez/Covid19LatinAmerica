@@ -3,7 +3,6 @@ import { Link } from 'gatsby';
 import 'video-react/dist/video-react.css'; // import css
 import '../assets/css/FetchDataVirus.css';
 
-import Countries from '../components/countries';
 import LayoutData from '../components/LayoutDataHosting';
 import FetchDataVirus from '../components/FetchDataVirus';
 

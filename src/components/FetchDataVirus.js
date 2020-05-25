@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Countries from './countries';
 import moment from 'moment';
 class FetchDataVirus extends Component {
   static displayName = FetchDataVirus.name;
