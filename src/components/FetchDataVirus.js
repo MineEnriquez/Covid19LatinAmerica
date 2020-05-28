@@ -59,13 +59,11 @@ class FetchDataVirus extends Component {
   static renderForecastsTable(forecasts) {
     return (
       <div>
-
         <table >
           <thead>
             <tr role='rowheader' className='dataTable headers'>
               <th>Pais</th>
-              <th>Provincia</th>
-              <th>Ciudad</th>
+              <th>Provincia/Estado</th>
               <th>Casos Confirmados</th>
               <th>Muertes</th>
               <th>Recuperados</th>
@@ -73,12 +71,11 @@ class FetchDataVirus extends Component {
           </thead>
           <tbody>
             {forecasts.map(forecast =>
-              <tr role='row' key={forecast.keyId}>
+              <tr role='row' className="table-condensed table-hover table-bordered" key={forecast.keyId}>
                 <td>{forecast.country}</td>
                 <td>{forecast.province}</td>
-                <td>{forecast.city}</td>
                 <td>{forecast.confirmed}</td>
-                <td>{forecast.deaths}</td>
+                <td className="redtext">{forecast.deaths}</td>
                 <td>{forecast.recovered}</td>
               </tr>
             )}
@@ -99,7 +96,6 @@ class FetchDataVirus extends Component {
     return (
       <div>
         <div className="grid-wrapper">
-
           <div className="col-6">
             <h4> {this.state.totalCases} casos confirmados.</h4>
           </div>
@@ -109,7 +105,7 @@ class FetchDataVirus extends Component {
         </div>
         <div>
           <div className="col-4">
-            Filtro:
+            Seleccione un pais:
           </div>
           <div className="col-8">
             <select
@@ -123,7 +119,9 @@ class FetchDataVirus extends Component {
           </div>
         </div>
         <p className='small-text'>Los valores en esta tabla incluye los ultimos datos en <strong>{this.pais}</strong> reportados hasta <strong> {this.state.lastUpdate} </strong>, y ordenados por casos confirmados.</p>
+        <div className="transparent">
         {contents}
+        </div>
         <p> * This program uses an API with publicly available data about current confirmed cases, deaths, and recoveries of the COVID-19 virus AKA Coronavirus compiled by Johns Hopkins University. </p>
       </div>
     );

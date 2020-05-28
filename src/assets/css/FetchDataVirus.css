@@ -10,3 +10,9 @@
 .right-justified{
     justify-content: right;
 }
+.redtext{
+    color: darkred;
+}
+.transparent{
+    background: transparent;
+}

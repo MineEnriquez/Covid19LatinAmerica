@@ -48,7 +48,7 @@ class Homepage extends React.Component {
                                 <li>Podrías tener el virus y no presentar síntomas</li>
                                 <li>Si presentas síntomas, estos pueden presentarse de uno a doce dias después de haberte infectado</li>
                             </p>
-                            <p><a href="https://www.who.int/es">OMS</a></p>
+                            <p><a href="https://www.who.int/es">Organizacion Mundial de la Salyd</a></p>
                             {/*Sintomas de la enfermedad: https://who.canto.global/b/JKJTT */}
                         </div>
                         <div className="col-6">
@@ -60,6 +60,7 @@ class Homepage extends React.Component {
                     <div className="grid-wrapper">
                         <div className="col-6">
                             <Player
+                                aria-label ='Play video'
                                 playsInline
                                 poster={covidpic02}
                                 src={video01} />
@@ -76,7 +77,7 @@ class Homepage extends React.Component {
                             <li>Garganta irritada</li>
                             <li>Problema para percibir olores</li>
                             <li>Neumonía</li>
-                            <p><a href="https://www.who.int/es">OMS</a></p>
+                            <p><a href="https://www.who.int/es">Organizacion Mundial de la Salud</a></p>
                         </div>
                     </div>
                 </section>

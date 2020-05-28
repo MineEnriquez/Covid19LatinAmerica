@@ -39,3 +39,6 @@ Here is an example of using the grid, for a 3 column layout:
     </div>
 </div>
 ```
+### SEO:
+
+(NOTE: for voog : https://www.voog.com/support/guides/seo/getting-your-website-to-appear-in-google-and-bing )
