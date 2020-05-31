@@ -36,7 +36,7 @@ class FetchDataVirus extends Component {
           if (this.countries.length < 189) {
             if (this.countries.indexOf(dataset[i].country) === -1) this.countries.push(dataset[i].country);
           }
-          dataset[i].confirmed = dataset[i].confirmed.toLocaleString("en-US");
+          dataset[i].confirmed_localized = dataset[i].confirmed.toLocaleString("en-US");
         }
         /* Component:  Set State*/
         this.setState({
@@ -61,6 +61,10 @@ class FetchDataVirus extends Component {
   }
   handleSort(e) {
     /* Custom Sort*/
+    let sortKey = e.target.value;
+    const data = this.state.forecasts;
+    data.sort((a, b) => a[sortKey].localeCompare(b[sortKey]))
+    this.setState({ data })
   }
   static renderForecastsTable(forecasts) {
     return (
@@ -80,7 +84,7 @@ class FetchDataVirus extends Component {
               <tr role='row' className="table-condensed table-hover table-bordered" key={forecast.keyId}>
                 <td>{forecast.country}</td>
                 <td>{forecast.province}</td>
-                <td>{forecast.confirmed}</td>
+                <td>{forecast.confirmed_localized}</td>
                 <td className="redtext">{forecast.deaths}</td>
                 <td>{forecast.recovered}</td>
               </tr>
