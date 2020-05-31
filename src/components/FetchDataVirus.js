@@ -61,12 +61,15 @@ class FetchDataVirus extends Component {
   }
   handleSort(e) {
     /* Custom Sort*/
-    let sortKey = e.target.value;
+    console.log(e.target.value);
     const data = this.state.forecasts;
-    data.sort((a, b) => a[sortKey].localeCompare(b[sortKey]));
+    if (e.target.value === 'country')
+      data.sort((a, b) => a['country'].localeCompare(b['country']));
+
+    else if (e.target.value === 'countrydesc')
+      data.sort((a, b) => a['country'].localeCompare(b['country'])).reverse()
+
     /* TODO: add input fields to select different sort scenarios below:
-       ** onClick={this.handleSort} **
-     data.sort((a, b) => a[sortKey].localeCompare(b[sortKey])).reverse()    // text sortKey desc
      data.sort((a, b) => {return b[sortKey]- a[sortKey]})                   // numeric sortKey descending (like confirmed cases and deaths)
      data.sort((a, b) => {return a[sortKey]- b[sortKey]})                   // numeric sortKey ascending
      */
@@ -112,33 +115,49 @@ class FetchDataVirus extends Component {
     return (
       <div>
         <div className="grid-wrapper">
-          <div className="col-6">
+          <div className="col-8">
             <h4> {this.state.totalCases} casos confirmados.</h4>
           </div>
-          <div className="col-6">
+          <div className="col-4">
             <h4> {this.state.total} personas fallecidas. </h4>
           </div>
         </div>
-        <div>
-          <div className="col-4">
-            Seleccione un pais:
+        <section id="one" className="main style1">
+          <div className="grid-wrapper">
+            <div className="col-8">
+              Seleccione un pais:
+              <select
+                defaultValue={this.state.selectValue}
+                name="country"
+                onChange={this.handleChange} >
+                {this.countries.map((e) => {
+                  return <option key={e} value={e}>{e}</option>;
+                })}
+              </select>
+              <p className='small-text'>Los valores en esta tabla incluye los ultimos datos en <strong>{this.pais}</strong> reportados hasta <strong> {this.state.lastUpdate} </strong></p>
+            </div>
+            <div className="col-4">
+              Ordenado por:
+              <select
+                defaultValue={this.state.selectValue}
+                name="sortingchoice"
+                onChange={this.handleSort} >
+                <option key="1" value="country"> Ordenar por pais ascendente</option>
+                <option key="2" value="countrydesc"> Ordenar por pais descendente</option>
+                <option key="3" value="confirmed"> Casos confirmados</option>
+                <option key="4" value="deaths"> Numero de muertes</option>
+              </select>
+            </div>
           </div>
-          <div className="col-8">
-            <select
-              defaultValue={this.state.selectValue}
-              name="country"
-              onChange={this.handleChange} >
-              {this.countries.map((e) => {
-                return <option key={e} value={e}>{e}</option>;
-              })}
-            </select>
+        </section>
+        <section>
+          <div className="transparent">
+            {contents}
           </div>
-        </div>
-        <p className='small-text'>Los valores en esta tabla incluye los ultimos datos en <strong>{this.pais}</strong> reportados hasta <strong> {this.state.lastUpdate} </strong>, y ordenados por casos confirmados.</p>
-        <div className="transparent">
-          {contents}
-        </div>
-        <p> * This program uses an API with publicly available data about current confirmed cases, deaths, and recoveries of the COVID-19 virus AKA Coronavirus compiled by Johns Hopkins University. </p>
+
+          <p className='small-text'> * This program uses an API with publicly available data about current confirmed cases, deaths, and recoveries of the COVID-19 virus AKA Coronavirus compiled by Johns Hopkins University. </p>
+        </section>
+
       </div>
     );
   }
