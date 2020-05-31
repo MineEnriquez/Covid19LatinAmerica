@@ -6,7 +6,8 @@ class FetchDataVirus extends Component {
   constructor(props) {
     super(props);
     this.state = { forecasts: [], loading: true, total: 0, totalCases: 0, paises: [], lastUpdate: "", selectedCountry: "All" };
-    this.handleChange = this.handleChange.bind(this);
+    this.handleChange = this.handleChange.bind(this);   // Country filtering event 
+    this.handleSort = this.handleSort.bind(this);       // Data custom sortin
     this.pais = this.props.defaultCountry;
     this.countries = [this.props.defaultCountry];
   }
@@ -58,7 +59,9 @@ class FetchDataVirus extends Component {
     console.log(this.pais);
     this.componentDidMount();
   }
-
+  handleSort(e) {
+    /* Custom Sort*/
+  }
   static renderForecastsTable(forecasts) {
     return (
       <div>
