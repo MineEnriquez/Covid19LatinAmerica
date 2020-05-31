@@ -27,23 +27,25 @@ class FetchDataVirus extends Component {
       .then(data => {
         var sum = 0;
         var cases = 0;
-        for (var i = 0; i < data.data.covid19Stats.length; i++) {
-          sum = sum + data.data.covid19Stats[i].deaths;
-          cases = cases + data.data.covid19Stats[i].confirmed;
+        var dataset = data.data.covid19Stats;  //shortening the name.
+        data.data.covid19Stats = ""; // releasing memmory.
+        for (var i = 0; i < dataset.length; i++) {
+          sum = sum + dataset[i].deaths;
+          cases = cases + dataset[i].confirmed;
           if (this.countries.length < 189) {
-            if (this.countries.indexOf(data.data.covid19Stats[i].country) === -1) this.countries.push(data.data.covid19Stats[i].country);
+            if (this.countries.indexOf(dataset[i].country) === -1) this.countries.push(dataset[i].country);
           }
-          data.data.covid19Stats[i].confirmed = data.data.covid19Stats[i].confirmed.toLocaleString("en-US");
-
+          dataset[i].confirmed = dataset[i].confirmed.toLocaleString("en-US");
         }
+        /* Component:  Set State*/
         this.setState({
-          forecasts: data.data.covid19Stats,
+          forecasts: dataset,
           loading: false,
           total: Number(sum).toLocaleString("en-us"),
           totalCases: Number(cases).toLocaleString("en-us"),
-          lastUpdate: moment(data.data.covid19Stats[0]).format('MMMM Do YYYY, h:mm:ss A')
+          lastUpdate: moment(dataset[0]).format('MMMM Do YYYY, hh:mm:sss')
         });
-        console.log("Sample record", data.data.covid19Stats[0]);
+        console.log("Sample record", dataset[0]);
         console.log("total paises:", this.countries.length);
       })
       .catch(err => {
@@ -51,6 +53,7 @@ class FetchDataVirus extends Component {
       });
   }
   handleChange(e) {
+    /* Country Filtering. */
     this.pais = e.target.value;
     console.log(this.pais);
     this.componentDidMount();
@@ -120,7 +123,7 @@ class FetchDataVirus extends Component {
         </div>
         <p className='small-text'>Los valores en esta tabla incluye los ultimos datos en <strong>{this.pais}</strong> reportados hasta <strong> {this.state.lastUpdate} </strong>, y ordenados por casos confirmados.</p>
         <div className="transparent">
-        {contents}
+          {contents}
         </div>
         <p> * This program uses an API with publicly available data about current confirmed cases, deaths, and recoveries of the COVID-19 virus AKA Coronavirus compiled by Johns Hopkins University. </p>
       </div>
