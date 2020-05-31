@@ -63,7 +63,13 @@ class FetchDataVirus extends Component {
     /* Custom Sort*/
     let sortKey = e.target.value;
     const data = this.state.forecasts;
-    data.sort((a, b) => a[sortKey].localeCompare(b[sortKey]))
+    data.sort((a, b) => a[sortKey].localeCompare(b[sortKey]));
+    /* TODO: add input fields to select different sort scenarios below:
+       ** onClick={this.handleSort} **
+     data.sort((a, b) => a[sortKey].localeCompare(b[sortKey])).reverse()    // text sortKey desc
+     data.sort((a, b) => {return b[sortKey]- a[sortKey]})                   // numeric sortKey descending (like confirmed cases and deaths)
+     data.sort((a, b) => {return a[sortKey]- b[sortKey]})                   // numeric sortKey ascending
+     */
     this.setState({ data })
   }
   static renderForecastsTable(forecasts) {
