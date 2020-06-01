@@ -88,27 +88,24 @@ class FetchDataVirus extends Component {
               <th>Provincia/Estado</th>
               <th>Casos Confirmados</th>
               <th>Muertes</th>
-              <th>Recuperados</th>
+              {/* <th>Recuperados</th> */}
             </tr>
           </thead>
           <tbody>
             {forecasts.map(forecast =>
-              <tr role='row' className="table-condensed table-hover table-bordered" key={forecast.keyId}>
+              <tr role='row' key={forecast.keyId}>
                 <td>{forecast.country}</td>
-                <td>{forecast.province}</td>
+                {/* <td>{forecast.province}</td> */}
+                <td>{forecast.keyId}</td> 
                 <td>{forecast.confirmed_localized}</td>
                 <td className="redtext">{forecast.deaths}</td>
-                <td>{forecast.recovered}</td>
+                {/* <td>{forecast.recovered}</td> */}
               </tr>
             )}
           </tbody>
         </table>
-
       </div>
-
-
     );
-
   }
 
   render() {
@@ -117,15 +114,7 @@ class FetchDataVirus extends Component {
       : FetchDataVirus.renderForecastsTable(this.state.forecasts);
     return (
       <div>
-        <div className="grid-wrapper">
-          <div className="col-8">
-            <h4> {this.state.totalCases} casos confirmados.</h4>
-          </div>
-          <div className="col-4">
-            <h4> {this.state.total} personas fallecidas. </h4>
-          </div>
-        </div>
-        <section id="one" className="main style1">
+        <section id="filteringAndSorting" className="submain style1">
           <div className="grid-wrapper">
             <div className="col-8">
               Seleccione un pais:
@@ -151,6 +140,16 @@ class FetchDataVirus extends Component {
                 <option key="3" value="confirmed"> Casos confirmados</option>
                 <option key="4" value="deaths"> Numero de muertes</option>
               </select>
+            </div>
+          </div>
+        </section>
+        <section id="summary" className="submain style1">
+          <div className="grid-wrapper">
+            <div className="col-8">
+              <h4> {this.state.totalCases} casos confirmados.</h4>
+            </div>
+            <div className="col-4">
+              <h4> {this.state.total} personas fallecidas. </h4>
             </div>
           </div>
         </section>
