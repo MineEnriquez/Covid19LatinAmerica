@@ -29,6 +29,7 @@ class FetchDataVirus extends Component {
         var sum = 0;
         var cases = 0;
         var dataset = data.data.covid19Stats;  //shortening the name.
+        console.log(data.data.covid19Stats[0]);
         data.data.covid19Stats = ""; // releasing memmory.
         for (var i = 0; i < dataset.length; i++) {
           sum = sum + dataset[i].deaths;
@@ -69,16 +70,18 @@ class FetchDataVirus extends Component {
     else if (e.target.value === 'countrydesc')
       data.sort((a, b) => a['country'].localeCompare(b['country'])).reverse()
 
-    /* TODO: add input fields to select different sort scenarios below:
-     data.sort((a, b) => {return b[sortKey]- a[sortKey]})                   // numeric sortKey descending (like confirmed cases and deaths)
-     data.sort((a, b) => {return a[sortKey]- b[sortKey]})                   // numeric sortKey ascending
-     */
+    else if (e.target.value === 'confirmed')
+      data.sort((a, b) => { return b['confirmed'] - a['confirmed'] })
+
+    else if (e.target.value === 'deaths')
+      data.sort((a, b) => { return b['deaths'] - a['deaths'] })
+
     this.setState({ data })
   }
   static renderForecastsTable(forecasts) {
     return (
       <div>
-        <table >
+        <table className="table-wrapper">
           <thead>
             <tr role='rowheader' className='dataTable headers'>
               <th>Pais</th>
@@ -142,8 +145,9 @@ class FetchDataVirus extends Component {
                 defaultValue={this.state.selectValue}
                 name="sortingchoice"
                 onChange={this.handleSort} >
-                <option key="1" value="country"> Ordenar por pais ascendente</option>
-                <option key="2" value="countrydesc"> Ordenar por pais descendente</option>
+                <option key="0" value="none"> </option>  
+                <option key="1" value="country"> Nombre de pais ascendente</option>
+                <option key="2" value="countrydesc"> Nombre pais descendente</option>
                 <option key="3" value="confirmed"> Casos confirmados</option>
                 <option key="4" value="deaths"> Numero de muertes</option>
               </select>
@@ -154,10 +158,8 @@ class FetchDataVirus extends Component {
           <div className="transparent">
             {contents}
           </div>
-
           <p className='small-text'> * This program uses an API with publicly available data about current confirmed cases, deaths, and recoveries of the COVID-19 virus AKA Coronavirus compiled by Johns Hopkins University. </p>
         </section>
-
       </div>
     );
   }
