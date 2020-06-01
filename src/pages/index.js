@@ -20,21 +20,16 @@ class Homepage extends React.Component {
         return (
             <Layout>
                 <Helmet title={siteTitle} />
-                {/* <section id="nav" className="main style1">
-                    <div className="grid-wrapper">
-                    <div >
-                    </div>
-                    </div>
-                </section>> */}
+                <section id="nav" className="submain style1">
+                    <Link to="/statistics">E S T A D I S T I C A S</Link>
+                </section>
                 <section id="one" className="main style1">
-                <Link to="/statistics">E S T A D I S T I C A S</Link>
                     <div className="grid-wrapper">
                         <div className="col-6">
                             <header className="major">
                                 <h2>Mantenerte informado <br />
                                 ayuda a proteger a tu familia</h2>
                             </header>
-
                             <p>El brote mundial del NUEVO virus Covid19 ha traído como resultado diversas
                             medidas que tanto el gobierno como la sociedad deben adoptar.
                             En un evento sin  precedente, la sociedad a nivel mundial ha tenido que
@@ -60,7 +55,7 @@ class Homepage extends React.Component {
                     <div className="grid-wrapper">
                         <div className="col-6">
                             <Player
-                                aria-label ='Play video'
+                                aria-label='Play video'
                                 playsInline
                                 poster={covidpic02}
                                 src={video01} />
