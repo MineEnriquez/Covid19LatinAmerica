@@ -686,12 +686,13 @@
 	.table-wrapper {
 		-webkit-overflow-scrolling: touch;
 		overflow-x: auto;
+		background-color: desaturate($color: _palette(border-bg), $amount: 20%);
 	}
 
 	table {
 		margin: 0 0 _size(element-margin) 0;
 		width: 100%;
-
+		border: 2px solid _palette(border-bg);
 		tbody {
 			tr {
 				border-left: 0;
@@ -709,10 +710,11 @@
 
 		th {
 			color: _palette(fg-bold);
-			font-size: 0.9em;
+			font-size: 1.00em;
 			font-weight: _font(weight-bold);
-			padding: 0 0.75em 0.75em 0.75em;
+			padding: 0.80em 0.75em 0.25em 0.75em;
 			text-align: left;
+			// background-color: saturation($color: #000000);
 		}
 
 		thead {
@@ -917,7 +919,7 @@
 /* Main */
 
 	.main {
-		@include padding(5em, 0);
+		@include padding(4em, 0);
 
 		&.style1 {
 			background: _palette(bg);
@@ -930,7 +932,20 @@
 			background-size:		auto,							cover;
 		}
 	}
+	.submain {
+		@include padding(.5em, 0);
 
+		&.style1 {
+			background: _palette(bg);
+		}
+
+		&.style2 {
+			@include dark(#333);
+			background-attachment:	fixed,							fixed;
+			background-image:		url('../images/overlay1.png'),		url('../images/header.jpg');
+			background-size:		auto,							cover;
+		}
+	}
 /* Header */
 
 	#header {
