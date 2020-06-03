@@ -8,7 +8,7 @@ class HeaderDataHosting extends React.Component {
                     <h1><strong>Reporte de occurencia</strong><br />
                     </h1>
                     <ul className="actions">
-                        <li><a href="#one" className="button scrolly">ESTADISTICAS</a></li>
+                        <li><a href="#data" className="button scrolly">ESTADISTICAS</a></li>
                     </ul>
                 </div>
             </section>

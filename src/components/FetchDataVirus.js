@@ -86,7 +86,7 @@ class FetchDataVirus extends Component {
             <tr role='rowheader' className='dataTable headers'>
               <th>Pais</th>
               <th>Provincia/Estado</th>
-              <th>Casos Confirmados</th>
+              <th>Num. Casos</th>
               <th>Muertes</th>
               {/* <th>Recuperados</th> */}
             </tr>
@@ -153,7 +153,7 @@ class FetchDataVirus extends Component {
             </div>
           </div>
         </section>
-        <section>
+        <section id="data">
           <div className="transparent">
             {contents}
           </div>
