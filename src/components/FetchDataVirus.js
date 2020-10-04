@@ -5,18 +5,21 @@ class FetchDataVirus extends Component {
 
   constructor(props) {
     super(props);
-    this.state = { forecasts: [], loading: true, total: 0, totalCases: 0, paises: [], lastUpdate: "", selectedCountry: "All" };
+    this.state = { tabledata: [], loading: true, total: 0, totalCases: 0, paises: [], lastUpdate: "", selectedCountry: "All" };
     this.handleChange = this.handleChange.bind(this);   // Country filtering event 
-    this.handleSort = this.handleSort.bind(this);       // Data custom sortin
+    this.handleSort = this.handleSort.bind(this);       // Data custom sorting
     this.pais = this.props.defaultCountry;
     this.countries = [this.props.defaultCountry];
+    this.dataset = "";
   }
   componentDidMount() {
     var queryParam;
     if (this.pais === this.props.defaultCountry) queryParam = "";
     else queryParam = "?country=" + this.pais;
+
     var url = "https://covid-19-coronavirus-statistics.p.rapidapi.com/v1/stats" + queryParam;
     console.log(url);
+    
     fetch(url, {
       "method": "GET",
       "headers": {
@@ -28,26 +31,27 @@ class FetchDataVirus extends Component {
       .then(data => {
         var sum = 0;
         var cases = 0;
-        var dataset = data.data.covid19Stats;  //shortening the name.
+        this.dataset = data.data.covid19Stats;  //shortening the name.
         console.log(data.data.covid19Stats[0]);
         data.data.covid19Stats = ""; // releasing memmory.
-        for (var i = 0; i < dataset.length; i++) {
-          sum = sum + dataset[i].deaths;
-          cases = cases + dataset[i].confirmed;
+
+        for (var i = 0; i < this.dataset.length; i++) {
+          sum = sum + this.dataset[i].deaths;
+          cases = cases + this.dataset[i].confirmed;
           if (this.countries.length < 189) {
-            if (this.countries.indexOf(dataset[i].country) === -1) this.countries.push(dataset[i].country);
+            if (this.countries.indexOf(this.dataset[i].country) === -1) this.countries.push(this.dataset[i].country);
           }
-          dataset[i].confirmed_localized = dataset[i].confirmed.toLocaleString("en-US");
+          this.dataset[i].confirmed_localized = this.dataset[i].confirmed.toLocaleString("en-US");
         }
         /* Component:  Set State*/
         this.setState({
-          forecasts: dataset,
+          tabledata: this.dataset,
           loading: false,
           total: Number(sum).toLocaleString("en-us"),
           totalCases: Number(cases).toLocaleString("en-us"),
-          lastUpdate: moment(dataset[0]).format('MMMM Do YYYY, hh:mm:sss')
+          lastUpdate: moment(this.dataset[0]).format('MMMM Do YYYY, hh:mm:sss')
         });
-        console.log("Sample record", dataset[0]);
+        console.log("Sample record", this.dataset[0]);
         console.log("total paises:", this.countries.length);
       })
       .catch(err => {
@@ -59,11 +63,17 @@ class FetchDataVirus extends Component {
     this.pais = e.target.value;
     console.log(this.pais);
     this.componentDidMount();
+    this.componentApplyFilter();
   }
+
+  componentApplyFilter(){
+    
+  }
+
   handleSort(e) {
     /* Custom Sort*/
     console.log(e.target.value);
-    const data = this.state.forecasts;
+    const data = this.state.tabledata;
     if (e.target.value === 'country')
       data.sort((a, b) => a['country'].localeCompare(b['country']));
 
@@ -78,7 +88,8 @@ class FetchDataVirus extends Component {
 
     this.setState({ data })
   }
-  static renderForecastsTable(forecasts) {
+  
+  static renderForecastsTable(tabledata) {
     return (
       <div>
         <table className="table-wrapper">
@@ -92,7 +103,7 @@ class FetchDataVirus extends Component {
             </tr>
           </thead>
           <tbody>
-            {forecasts.map(forecast =>
+            {tabledata.map(forecast =>
               <tr role='row' key={forecast.keyId}>
                 <td>{forecast.country}</td>
                 {/* <td>{forecast.province}</td> */}
@@ -111,7 +122,7 @@ class FetchDataVirus extends Component {
   render() {
     let contents = this.state.loading
       ? <p><em>Loading...</em></p>
-      : FetchDataVirus.renderForecastsTable(this.state.forecasts);
+      : FetchDataVirus.renderForecastsTable(this.state.tabledata);
     return (
       <div>
         <section id="filteringAndSorting" className="submain style1">

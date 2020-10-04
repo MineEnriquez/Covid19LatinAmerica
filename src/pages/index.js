@@ -6,8 +6,8 @@ import { Player } from 'video-react';
 
 import Layout from '../components/layout';
 
-import covidpic01 from '../assets/images/covid/pic01.jpg'
-import covidpic02 from '../assets/images/covid/poster01.png'
+import covidpic01 from '../assets/images/covidimg/pic01.jpg'
+import covidpic02 from '../assets/images/covidimg/poster01.png'
 import pic02 from '../assets/images/pic02.jpg'
 import pic03 from '../assets/images/pic03.jpg'
 import pic04 from '../assets/images/pic04.jpg'
@@ -30,11 +30,9 @@ class Homepage extends React.Component {
                                 <h2>Mantenerte informado <br />
                                 ayuda a proteger a tu familia</h2>
                             </header>
-                            <p>El brote mundial del NUEVO virus Covid19 ha traído como resultado diversas
-                            medidas que tanto el gobierno como la sociedad deben adoptar.
-                            En un evento sin  precedente, la sociedad a nivel mundial ha tenido que
+                            <p>En un evento sin  precedente, la sociedad a nivel mundial ha tenido que
                             implementar el distanciamiento social en un esfuerzo por disminuir
-                                el esparcimiento del mismo.  <br />
+                                el esparcimiento del nuevo Corona Virus "Covid19".<br />
                                 Porque es tan importante evitar ser contagiado?
                                 <li>No hay vacuna ni tratamiento especifico</li>
                                 <li>Si tienes el virus puedes infectar a más personas</li>
@@ -43,7 +41,7 @@ class Homepage extends React.Component {
                                 <li>Podrías tener el virus y no presentar síntomas</li>
                                 <li>Si presentas síntomas, estos pueden presentarse de uno a doce dias después de haberte infectado</li>
                             </p>
-                            <p><a href="https://www.who.int/es">Organizacion Mundial de la Salyd</a></p>
+                            <p><a href="https://www.who.int/es">Organizacion Mundial de la Salud</a></p>
                             {/*Sintomas de la enfermedad: https://who.canto.global/b/JKJTT */}
                         </div>
                         <div className="col-6">
