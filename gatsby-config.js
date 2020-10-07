@@ -9,8 +9,9 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: 'gatsby-starter-default',
-        short_name: 'starter',
+        name: 'Covid19 in spanish',
+        short_name: 'Covid19 ES',
+        lang: `es`,
         start_url: '/',
         background_color: '#663399',
         theme_color: '#663399',
