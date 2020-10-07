@@ -1,8 +1,8 @@
 {
-  "name": "gatsby-starter-photon",
-  "description": "Gatsby photon starter",
+  "name": "covid19",
+  "description": "Covid19 information page for the hispanic community",
   "version": "1.0.0",
-  "author": "",
+  "author": "Minerva Gomez Cuenca",
   "dependencies": {
     "gatsby": "^2.15.14",
     "gatsby-plugin-manifest": "^2.2.16",
@@ -18,7 +18,7 @@
     "video-react": "^0.14.1"
   },
   "keywords": [
-    "gatsby"
+    "gatsby covid19 latino"
   ],
   "license": "MIT",
   "scripts": {
@@ -32,6 +32,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-photon"
+    "url": "https://github.com/MineEnriquez"
   }
 }
