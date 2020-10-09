@@ -20,28 +20,30 @@ class Homepage extends React.Component {
         return (
             <Layout>
                 <Helmet title={siteTitle} />
-                <section id="nav" className="submain style1">
+                <section id="nav" className="submain style1 left">
                     <Link to="/statistics">E S T A D I S T I C A S</Link>
                 </section>
-                <section id="one" className="main style1">
+
+                <section id="intro" className="main style1">
                     <div className="grid-wrapper">
                         <div className="col-6">
                             <header className="major">
-                                <h2>Mantenerte informado <br />
+                                <h2>Mantenerte informado  <br />
                                 ayuda a proteger a tu familia</h2>
                             </header>
                             <p>En un evento sin  precedente, la sociedad a nivel mundial ha tenido que
                             implementar el distanciamiento social en un esfuerzo por disminuir
                                 el esparcimiento del nuevo Corona Virus "Covid19".<br />
-                                Porque es tan importante evitar ser contagiado?
-                                <li>No hay vacuna ni tratamiento especifico</li>
-                                <li>Si tienes el virus puedes infectar a más personas</li>
-                                <li>Puede causar la muerte</li>
-                                <li>No hay suficiente información sobre los daños que pueda causar al organismo</li>
-                                <li>Podrías tener el virus y no presentar síntomas</li>
-                                <li>Si presentas síntomas, estos pueden presentarse de uno a doce dias después de haberte infectado</li>
+                                ¿Porque es tan importante evitar ser contagiado?
                             </p>
-                            <p><a href="https://www.who.int/es">Organizacion Mundial de la Salud</a></p>
+                            <li>Si tienes el virus puedes infectar a más personas</li>
+                            <li>Podrías tener el virus y no presentar síntomas</li>
+                            <li>No hay vacuna ni tratamiento especifíco</li>
+                            <li>Puede causar la muerte</li>
+                            <li>No hay suficiente información sobre los daños que pueda causar al organismo</li>
+                            <li>Si presentas síntomas, estos pueden presentarse de uno a doce dias después de haberte infectado, 
+                                para ese entonces, podrias ya haber afectado a tus seres queridos.</li>
+                            <p><a href="https://www.who.int/es">Organización Mundial de la Salud</a></p>
                             {/*Sintomas de la enfermedad: https://who.canto.global/b/JKJTT */}
                         </div>
                         <div className="col-6">
@@ -52,6 +54,7 @@ class Homepage extends React.Component {
                 <section id="sintomas" className="main style1">
                     <div className="grid-wrapper">
                         <div className="col-6">
+                            <h3>VIDEO:</h3>
                             <Player
                                 aria-label='Play video'
                                 playsInline
@@ -60,8 +63,12 @@ class Homepage extends React.Component {
                         </div>
                         <div className="col-6">
                             <header className="major">
-                                <h2>Síntomas de la enfermedad</h2>
+                                <h2>Síntomas mas severos de la enfermedad</h2>
                             </header>
+                            <p> Nota: Estos síntomas podrían representar un estado 
+                                muy avanzado de la infección y se recomienda que acuda
+                                de inmediato a un centro de diagnostico del Covid19:
+                            </p>
                             <li>Tos</li>
                             <li>Problemas para respirar</li>
                             <li>Fiebre alta</li>
@@ -70,7 +77,7 @@ class Homepage extends React.Component {
                             <li>Garganta irritada</li>
                             <li>Problema para percibir olores</li>
                             <li>Neumonía</li>
-                            <p><a href="https://www.who.int/es">Organizacion Mundial de la Salud</a></p>
+                            <p><a href="https://www.who.int/es">Organización Mundial de la Salud</a></p>
                         </div>
                     </div>
                 </section>
@@ -88,12 +95,21 @@ class Homepage extends React.Component {
                         </div>
                         <div className="col-6">
                             <header className="major">
-                                <h2>Lorem ipsum dolor adipiscing<br />
-                                amet dolor consequat</h2>
+                                <h2>¿Cuáles son los síntomas de la COVID-19?</h2>
                             </header>
-                            <p>Adipiscing a commodo ante nunc accumsan interdum mi ante adipiscing. A nunc lobortis non nisl amet vis volutpat aclacus nascetur ac non. Lorem curae eu ante amet sapien in tempus ac. Adipiscing id accumsan adipiscing ipsum.</p>
-                            <p>Blandit faucibus proin. Ac aliquam integer adipiscing enim non praesent vis commodo nunc phasellus cubilia ac risus accumsan. Accumsan blandit. Lobortis phasellus non lobortis dit varius mi varius accumsan lobortis. Blandit ante aliquam lacinia lorem lobortis semper morbi col faucibus vitae integer placerat accumsan orci eu mi odio tempus adipiscing adipiscing adipiscing curae consequat feugiat etiam dolore.</p>
-                            <p>Adipiscing a commodo ante nunc accumsan interdum mi ante adipiscing. A nunc lobortis non nisl amet vis volutpat aclacus nascetur ac non. Lorem curae eu ante amet sapien in tempus ac. Adipiscing id accumsan adipiscing ipsum.</p>
+                            <p>
+                                Los síntomas más habituales de la COVID-19 son la fiebre, 
+                                la tos seca y el cansancio. <br />
+                                Otros síntomas menos frecuentes que afectan a algunos pacientes son los dolores y molestias, 
+                                la congestión nasal, 
+                                el dolor de cabeza, 
+                                la conjuntivitis, 
+                                el dolor de garganta, 
+                                la diarrea, 
+                                la pérdida del gusto o el olfato y las erupciones cutáneas o cambios de color en los dedos de las manos o los pies. 
+                                Estos síntomas suelen ser leves y comienzan gradualmente. 
+                                Algunas de las personas infectadas solo presentan síntomas levísimos.
+                            </p>
                         </div>
                     </div>
                 </section>
