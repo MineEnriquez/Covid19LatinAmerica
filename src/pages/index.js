@@ -8,9 +8,9 @@ import Layout from '../components/layout';
 
 import covidpic01 from '../assets/images/covidimg/pic01.jpg'
 import covidpic02 from '../assets/images/covidimg/poster01.png'
-import pic02 from '../assets/images/pic02.jpg'
-import pic03 from '../assets/images/pic03.jpg'
-import pic04 from '../assets/images/pic04.jpg'
+import pic06 from '../assets/images/covidimg/pic06.jpg'
+import pic03 from '../assets/images/covidimg/pic03.jpg'
+import pic05 from '../assets/images/covidimg/pic05.jpg'
 import video01 from '../assets/videos/sintomas-covid-19-sign-language.mp4'
 
 class Homepage extends React.Component {
@@ -118,43 +118,43 @@ class Homepage extends React.Component {
                     <div className="grid-wrapper">
                         <div className="col-12">
                             <header className="major">
-                                <h2>Adipiscing amet consequat</h2>
+                                <h2>Recomendaciones de la Organización Mundial de la salud</h2>
                             </header>
-                            <p>Ante nunc accumsan et aclacus nascetur ac ante amet sapien sed.</p>
+                            <p>Encuentre de forma sencilla información oficial proveida por la Organizacion Mundial de la Salud en español.</p>
                         </div>
 
                         <div className="col-4">
-                            <span className="image fit"><img src={pic02} alt="" /></span>
-                            <h3>Magna feugiat lorem</h3>
-                            <p>Adipiscing a commodo ante nunc magna lorem et interdum mi ante nunc lobortis non amet vis sed volutpat et nascetur.</p>
-                            <ul className="actions">
-                                <li><a href="#" className="button">More</a></li>
-                            </ul>
-                        </div>
-                        <div className="col-4">
                             <span className="image fit"><img src={pic03} alt="" /></span>
-                            <h3>Magna feugiat lorem</h3>
-                            <p>Adipiscing a commodo ante nunc magna lorem et interdum mi ante nunc lobortis non amet vis sed volutpat et nascetur.</p>
+                            <h3>Como usar la mascarilla</h3>
+                            <p>Cómo utilizar una mascarilla higiénica de tela de forma segura.</p>
                             <ul className="actions">
-                                <li><a href="#" className="button">More</a></li>
+                                <li><a href="https://www.who.int/es/emergencies/diseases/novel-coronavirus-2019/advice-for-public/when-and-how-to-use-masks" className="button">Mas información</a></li>
                             </ul>
                         </div>
                         <div className="col-4">
-                            <span className="image fit"><img src={pic04} alt="" /></span>
-                            <h3>Magna feugiat lorem</h3>
-                            <p>Adipiscing a commodo ante nunc magna lorem et interdum mi ante nunc lobortis non amet vis sed volutpat et nascetur.</p>
+                            <span className="image fit"><img src={pic05} alt="" /></span>
+                            <h3>Consejos sobre viajes:</h3>
+                            <p>Consejos actualizados de la OMS para el transporte internacional en relación con el brote del nuevo coronavirus Covid19.</p>
                             <ul className="actions">
-                                <li><a href="#" className="button">More</a></li>
+                                <li><a href="https://www.who.int/ith/2019-nCoV_advice_for_international_traffic/es/" className="button">Mas información</a></li>
+                            </ul>
+                        </div>
+                        <div className="col-4">
+                            <span className="image fit"><img src={pic06} alt="" /></span>
+                            <h3>Preguntas y respuestas</h3>
+                            <p>Preguntas y respuestas sobre la enfermedad por coronavirus (COVID-19).</p>
+                            <ul className="actions">
+                                <li><a href="https://www.who.int/es/emergencies/diseases/novel-coronavirus-2019/advice-for-public/q-a-coronaviruses" className="button">Mas información</a></li>
                             </ul>
                         </div>
 
                     </div>
                 </section>
 
-                <section id="four" className="main style2 special">
+                {/* <section id="four" className="main style2 special">
                     <div className="container">
                         <header className="major">
-                            <h2>Ipsum feugiat consequat?</h2>
+                            <h2>Noticias</h2>
                         </header>
                         <p>Sed lacus nascetur ac ante amet sapien.</p>
                         <ul className="actions uniform">
@@ -162,7 +162,7 @@ class Homepage extends React.Component {
                             <li><a href="#" className="button">Learn More</a></li>
                         </ul>
                     </div>
-                </section>
+                </section> */}
             </Layout>
         );
     }
