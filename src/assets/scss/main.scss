@@ -1035,6 +1035,7 @@
 		@include padding(6em, 0, (0,0,_size(element-margin),0));
 		@include dark(#4686a0);
 		background-attachment:	fixed,							fixed,							fixed;
+		// background-image:		url('../images/overlay2.png'),		url('../images/overlay4.svg'),		linear-gradient(45deg, _palette(accent6-alt), _palette(accent3-alt) 50%, _palette(accent1-alt) 95%);
 		background-image:		url('../images/covidimg/virus.jpg'),		url('../images/covidimg/virus.jpg'),		linear-gradient(45deg, _palette(accent6-alt), _palette(accent3-alt) 50%, _palette(accent1-alt) 95%);
 		background-position:	top left,						center center,					center center;
 		background-size:		auto,							cover,							cover;
@@ -1184,20 +1185,25 @@
 				@include padding(5em, 3em, (0,0,_size(element-margin),0));
 			}
 
-			
-			
+		/* One */
+
+			#one {
+				text-align: center;
+			}
+
+		/* Two */
+
+			#two {
+				text-align: center;
+			}
+		/* Left */
+
+		#left {
+			padding-left: 20px;
+			color: red;
 		}
-	/* Left */
-	.topleft {
-			color: lightgray;
-			background: transparent;
-			letter-spacing: 3px;
-			padding: 10px;
 	}
-	/* red text */
-	.red {
-		color: red;
-	}
+
 /* Small */
 
 	@include breakpoint(small) {

@@ -13,11 +13,12 @@ class Homepage extends React.Component {
     return (
       <LayoutData>
         <section id="one" className="main style1">
+          <Link to="/">PAGINA INICIAL</Link>
           <div className="grid-wrapper">
             <FetchDataVirus defaultCountry="Todos los Paises"></FetchDataVirus>
           </div>
         </section>
-        {/* <section id="four" className="main style1 special">
+        <section id="four" className="main style2 special">
           <div className="container">
             <header className="major">
               <h2>Ipsum feugiat consequat?</h2>
@@ -28,7 +29,7 @@ class Homepage extends React.Component {
               <li><a href="#" className="button">Learn More</a></li>
             </ul>
           </div>
-        </section> */}
+        </section>
       </LayoutData>
     );
   }
