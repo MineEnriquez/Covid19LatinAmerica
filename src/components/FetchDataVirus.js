@@ -19,7 +19,7 @@ class FetchDataVirus extends Component {
 
     var url = "https://covid-19-coronavirus-statistics.p.rapidapi.com/v1/stats" + queryParam;
     console.log(url);
-
+    this.addLatamCountries();
     fetch(url, {
       "method": "GET",
       "headers": {
@@ -64,18 +64,39 @@ class FetchDataVirus extends Component {
     this.pais = e.target.value;
     console.log(this.pais);
     this.componentDidMount();
-    this.componentApplyFilter();
   }
 
-  componentApplyFilter() {
-
+  addLatamCountries() {
+    /* Prioritizing the list o LATAM countries */
+    this.countries.push("Argentia");
+    this.countries.push("Bolivia");
+    this.countries.push("Brazil");
+    this.countries.push("Chile");
+    this.countries.push("Colombia");
+    this.countries.push("Costa Rica");
+    this.countries.push("Cuba");
+    this.countries.push("Dominican Republic");
+    this.countries.push("Ecuador");
+    this.countries.push("El Salvador");
+    this.countries.push("Guatemala");
+    this.countries.push("Haiti");
+    this.countries.push("Honduras");
+    this.countries.push("Mexico");
+    this.countries.push("Nicaragua");
+    this.countries.push("Panam");
+    this.countries.push("Paraguay");
+    this.countries.push("Peru");
+    this.countries.push("Puerto Rico");
+    this.countries.push("Uruguay");
+    this.countries.push("Venezuela");
+    this.countries.push("____________________________");
   }
 
   handleSort(e) {
     /* Custom Sort*/
     console.log(e.target.value);
     const data = this.state.tabledata;
-    
+
     if (e.target.value === 'nameasc' && this.pais === this.props.defaultCountry)
       data.sort((a, b) => a['country'].localeCompare(b['country']));
 
