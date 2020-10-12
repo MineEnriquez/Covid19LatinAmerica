@@ -19,7 +19,7 @@ class FetchDataVirus extends Component {
 
     var url = "https://covid-19-coronavirus-statistics.p.rapidapi.com/v1/stats" + queryParam;
     console.log(url);
-    
+
     fetch(url, {
       "method": "GET",
       "headers": {
@@ -41,6 +41,8 @@ class FetchDataVirus extends Component {
           if (this.countries.length < 189) {
             if (this.countries.indexOf(this.dataset[i].country) === -1) this.countries.push(this.dataset[i].country);
           }
+          let removestr = ", " + this.dataset[i].country;
+          this.dataset[i].prov = this.dataset[i].keyId.replace(removestr, "");
         }
         /* Component:  Set State*/
         this.setState({
@@ -65,19 +67,26 @@ class FetchDataVirus extends Component {
     this.componentApplyFilter();
   }
 
-  componentApplyFilter(){
-    
+  componentApplyFilter() {
+
   }
 
   handleSort(e) {
     /* Custom Sort*/
     console.log(e.target.value);
     const data = this.state.tabledata;
-    if (e.target.value === 'country')
+    
+    if (e.target.value === 'nameasc' && this.pais === this.props.defaultCountry)
       data.sort((a, b) => a['country'].localeCompare(b['country']));
 
-    else if (e.target.value === 'countrydesc')
+    else if (e.target.value === 'nameasc' && this.pais !== this.props.defaultCountry)
+      data.sort((a, b) => a['keyId'].localeCompare(b['keyId']));
+
+    else if (e.target.value === 'namedesc' && this.pais === this.props.defaultCountry)
       data.sort((a, b) => a['country'].localeCompare(b['country'])).reverse()
+
+    else if (e.target.value === 'namedesc' && this.pais !== this.props.defaultCountry)
+      data.sort((a, b) => a['keyId'].localeCompare(b['keyId'])).reverse()
 
     else if (e.target.value === 'confirmed')
       data.sort((a, b) => { return b['confirmed'] - a['confirmed'] })
@@ -87,8 +96,8 @@ class FetchDataVirus extends Component {
 
     this.setState({ data })
   }
-  
-  static renderForecastsTable(tabledata) {
+
+  static renderAllCountriesTable(tabledata) {
     return (
       <div>
         <table className="table-wrapper">
@@ -98,18 +107,15 @@ class FetchDataVirus extends Component {
               <th>Provincia/Estado</th>
               <th>Num. Casos</th>
               <th>Muertes</th>
-              {/* <th>Recuperados</th> */}
             </tr>
           </thead>
           <tbody>
             {tabledata.map(forecast =>
               <tr role='row' key={forecast.keyId}>
-                <td>{forecast.country}</td>
-                {/* <td>{forecast.province}</td> */}
-                <td>{forecast.keyId}</td> 
+                <td className="small-text">{forecast.country}</td>
+                <td className="small-text">{forecast.prov}</td>
                 <td>{forecast.confirmed.toLocaleString("en-US")}</td>
                 <td className="redtext">{forecast.deaths.toLocaleString("en-US")}</td>
-                {/* <td>{forecast.recovered}</td> */}
               </tr>
             )}
           </tbody>
@@ -117,11 +123,42 @@ class FetchDataVirus extends Component {
       </div>
     );
   }
-
+  static renderCountryTable(tabledata) {
+    return (
+      <div>
+        <table className="table-wrapper">
+          <thead>
+            <tr role='rowheader' className='dataTable headers'>
+              <th>Provincia/Estado</th>
+              <th>Num. Casos</th>
+              <th>Muertes</th>
+            </tr>
+          </thead>
+          <tbody>
+            {tabledata.map(forecast =>
+              <tr role='row' key={forecast.keyId}>
+                <td className="small-text">{forecast.prov}</td>
+                <td>{forecast.confirmed.toLocaleString("en-US")}</td>
+                <td className="redtext">{forecast.deaths.toLocaleString("en-US")}</td>
+              </tr>
+            )}
+          </tbody>
+        </table>
+      </div>
+    );
+  }
   render() {
-    let contents = this.state.loading
-      ? <p><em>Loading...</em></p>
-      : FetchDataVirus.renderForecastsTable(this.state.tabledata);
+    let contents;
+    if (this.state.loading) {
+      contents = <p><em>Loading...</em></p>
+    } else {
+      if (this.pais === this.props.defaultCountry) {
+        contents = FetchDataVirus.renderAllCountriesTable(this.state.tabledata);
+      } else {
+        contents = FetchDataVirus.renderCountryTable(this.state.tabledata);
+      }
+    }
+
     return (
       <div>
         <section id="filteringAndSorting" className="submain style1">
@@ -144,9 +181,8 @@ class FetchDataVirus extends Component {
                 defaultValue={this.state.selectValue}
                 name="sortingchoice"
                 onChange={this.handleSort} >
-                {/* <option key="0" value="none"> </option>   */}
-                <option key="1" value="country"> Nombre (Ascendente)</option>
-                <option key="2" value="countrydesc"> Nombre (Descendente)</option>
+                <option key="1" value="nameasc"> Nombre (Ascendente)</option>
+                <option key="2" value="namedesc"> Nombre (Descendente)</option>
                 <option key="3" value="confirmed"> Casos confirmados (Descendente)</option>
                 <option key="4" value="deaths"> Numero de muertes (Descendente)</option>
               </select>
@@ -163,7 +199,7 @@ class FetchDataVirus extends Component {
             </div>
           </div>
         </section>
-        <section id="data">
+        <section id="one" className="submain style1">
           <div className="transparent">
             {contents}
           </div>

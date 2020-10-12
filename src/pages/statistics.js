@@ -12,7 +12,7 @@ class Homepage extends React.Component {
 
     return (
       <LayoutData>
-        <section id="one" className="main style1">
+        <section id="data" className="main style1">
           <div className="grid-wrapper">
             <FetchDataVirus defaultCountry="Todos los Paises"></FetchDataVirus>
           </div>
