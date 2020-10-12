@@ -41,7 +41,6 @@ class FetchDataVirus extends Component {
           if (this.countries.length < 189) {
             if (this.countries.indexOf(this.dataset[i].country) === -1) this.countries.push(this.dataset[i].country);
           }
-          this.dataset[i].confirmed_localized = this.dataset[i].confirmed.toLocaleString("en-US");
         }
         /* Component:  Set State*/
         this.setState({
@@ -108,8 +107,8 @@ class FetchDataVirus extends Component {
                 <td>{forecast.country}</td>
                 {/* <td>{forecast.province}</td> */}
                 <td>{forecast.keyId}</td> 
-                <td>{forecast.confirmed_localized}</td>
-                <td className="redtext">{forecast.deaths}</td>
+                <td>{forecast.confirmed.toLocaleString("en-US")}</td>
+                <td className="redtext">{forecast.deaths.toLocaleString("en-US")}</td>
                 {/* <td>{forecast.recovered}</td> */}
               </tr>
             )}
@@ -137,7 +136,7 @@ class FetchDataVirus extends Component {
                   return <option key={e} value={e}>{e}</option>;
                 })}
               </select>
-              <p className='small-text'>Los valores en esta tabla incluye los ultimos datos en <strong>{this.pais}</strong> reportados hasta <strong> {this.state.lastUpdate} </strong></p>
+              <p className='small-text'>Los valores en esta tabla incluye los ultimos datos en <strong className="red">{this.pais.toUpperCase()}</strong> reportados hasta <strong> {this.state.lastUpdate} </strong></p>
             </div>
             <div className="col-4">
               Ordenado por:
@@ -145,11 +144,11 @@ class FetchDataVirus extends Component {
                 defaultValue={this.state.selectValue}
                 name="sortingchoice"
                 onChange={this.handleSort} >
-                <option key="0" value="none"> </option>  
-                <option key="1" value="country"> Nombre de pais ascendente</option>
-                <option key="2" value="countrydesc"> Nombre pais descendente</option>
-                <option key="3" value="confirmed"> Casos confirmados</option>
-                <option key="4" value="deaths"> Numero de muertes</option>
+                {/* <option key="0" value="none"> </option>   */}
+                <option key="1" value="country"> Nombre (Ascendente)</option>
+                <option key="2" value="countrydesc"> Nombre (Descendente)</option>
+                <option key="3" value="confirmed"> Casos confirmados (Descendente)</option>
+                <option key="4" value="deaths"> Numero de muertes (Descendente)</option>
               </select>
             </div>
           </div>

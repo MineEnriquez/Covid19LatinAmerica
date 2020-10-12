@@ -20,11 +20,7 @@ class Homepage extends React.Component {
         return (
             <Layout>
                 <Helmet title={siteTitle} />
-                <section id="nav" className="submain style1 left">
-                    <Link to="/statistics">E S T A D I S T I C A S</Link>
-                </section>
-
-                <section id="intro" className="main style1">
+                <section id="one" className="main style1">
                     <div className="grid-wrapper">
                         <div className="col-6">
                             <header className="major">
@@ -41,7 +37,7 @@ class Homepage extends React.Component {
                             <li>No hay vacuna ni tratamiento especifíco</li>
                             <li>Puede causar la muerte</li>
                             <li>No hay suficiente información sobre los daños que pueda causar al organismo</li>
-                            <li>Si presentas síntomas, estos pueden presentarse de uno a doce dias después de haberte infectado, 
+                            <li>Si presentas síntomas, estos pueden presentarse de uno a doce dias después de haberte infectado,
                                 para ese entonces, podrias ya haber afectado a tus seres queridos.</li>
                             <p><a href="https://www.who.int/es">Organización Mundial de la Salud</a></p>
                             {/*Sintomas de la enfermedad: https://who.canto.global/b/JKJTT */}
@@ -65,9 +61,9 @@ class Homepage extends React.Component {
                             <header className="major">
                                 <h2>Síntomas mas severos de la enfermedad</h2>
                             </header>
-                            <p> Nota: Estos síntomas podrían representar un estado 
-                                muy avanzado de la infección y se recomienda que acuda
-                                de inmediato a un centro de diagnostico del Covid19:
+                            <p> Nota: Estos síntomas podrían representar un estado
+                            muy avanzado de la infección y se recomienda que acuda
+                            de inmediato a un centro de diagnostico del Covid19:
                             </p>
                             <li>Tos</li>
                             <li>Problemas para respirar</li>
@@ -98,17 +94,25 @@ class Homepage extends React.Component {
                                 <h2>¿Cuáles son los síntomas de la COVID-19?</h2>
                             </header>
                             <p>
-                                Los síntomas más habituales de la COVID-19 son la fiebre, 
+                                Los síntomas más habituales de la COVID-19 son la fiebre,
                                 la tos seca y el cansancio. <br />
-                                Otros síntomas menos frecuentes que afectan a algunos pacientes son los dolores y molestias, 
-                                la congestión nasal, 
-                                el dolor de cabeza, 
-                                la conjuntivitis, 
-                                el dolor de garganta, 
-                                la diarrea, 
-                                la pérdida del gusto o el olfato y las erupciones cutáneas o cambios de color en los dedos de las manos o los pies. 
-                                Estos síntomas suelen ser leves y comienzan gradualmente. 
-                                Algunas de las personas infectadas solo presentan síntomas levísimos.
+                                Otros síntomas menos frecuentes que afectan a algunos pacientes son los dolores y molestias,
+                                la congestión nasal, el dolor de cabeza, la conjuntivitis,
+                                el dolor de garganta, la diarrea,
+                                la pérdida del gusto o el olfato y las erupciones cutáneas o
+                                cambios de color en los dedos de las manos o los pies.
+                                Estos síntomas suelen ser leves y comienzan gradualmente.
+                                Algunas de las personas infectadas solo presentan síntomas muy ligeros.
+                            </p>
+                            <p>
+                                <h3>
+                                    Recursos para la ciudadania:
+                                </h3>
+                                <li><a href="https://youtu.be/MHJKu3gWSU8">Rastreo de contacto</a> </li>
+                                <li>
+                                    <a href="https://www.who.int/docs/default-source/coronaviruse/200762-coping-with-stress-during-the-2019-sp.pdf" >
+                                        Como manejar el estress durante esta pandemia </a>
+                                </li>
                             </p>
                         </div>
                     </div>
