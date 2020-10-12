@@ -692,6 +692,7 @@
 	table {
 		margin: 0 0 _size(element-margin) 0;
 		width: 100%;
+		table-layout: fixed;
 		border: 2px solid _palette(border-bg);
 		tbody {
 			tr {

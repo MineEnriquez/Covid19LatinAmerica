@@ -104,7 +104,7 @@ class FetchDataVirus extends Component {
           <thead>
             <tr role='rowheader' className='dataTable headers'>
               <th>Pais</th>
-              <th>Provincia/Estado</th>
+              <th>Provincia, Estado</th>
               <th>Num. Casos</th>
               <th>Muertes</th>
             </tr>
