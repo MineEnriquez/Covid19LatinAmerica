@@ -68,7 +68,7 @@ class FetchDataVirus extends Component {
 
   addLatamCountries() {
     /* Prioritizing the list o LATAM countries */
-    this.countries.push("Argentia");
+    this.countries.push("Argentina");
     this.countries.push("Bolivia");
     this.countries.push("Brazil");
     this.countries.push("Chile");
@@ -83,7 +83,7 @@ class FetchDataVirus extends Component {
     this.countries.push("Honduras");
     this.countries.push("Mexico");
     this.countries.push("Nicaragua");
-    this.countries.push("Panam");
+    this.countries.push("Panama");
     this.countries.push("Paraguay");
     this.countries.push("Peru");
     this.countries.push("Puerto Rico");
@@ -150,7 +150,7 @@ class FetchDataVirus extends Component {
         <table className="table-wrapper">
           <thead>
             <tr role='rowheader' className='dataTable headers'>
-              <th>Provincia/Estado</th>
+              <th>Provincia, Estado</th>
               <th>Num. Casos</th>
               <th>Muertes</th>
             </tr>
