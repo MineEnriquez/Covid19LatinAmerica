@@ -133,10 +133,10 @@ class FetchDataVirus extends Component {
           <tbody>
             {tabledata.map(forecast =>
               <tr role='row' key={forecast.keyId}>
-                <td className="small-text">{forecast.country}</td>
-                <td className="small-text">{forecast.prov}</td>
+                <td className="small-text bolder-text">{forecast.country}</td>
+                <td className="small-text bolder-text">{forecast.prov}</td>
                 <td>{forecast.confirmed.toLocaleString("en-US")}</td>
-                <td className="redtext">{forecast.deaths.toLocaleString("en-US")}</td>
+                <td className="redtext bolder-text">{forecast.deaths.toLocaleString("en-US")}</td>
               </tr>
             )}
           </tbody>
@@ -158,9 +158,9 @@ class FetchDataVirus extends Component {
           <tbody>
             {tabledata.map(forecast =>
               <tr role='row' key={forecast.keyId}>
-                <td className="small-text">{forecast.prov}</td>
-                <td>{forecast.confirmed.toLocaleString("en-US")}</td>
-                <td className="redtext">{forecast.deaths.toLocaleString("en-US")}</td>
+                <td className="small-text bolder-text">{forecast.prov}</td>
+                <td className="bolder-text">{forecast.confirmed.toLocaleString("en-US")}</td>
+                <td className="redtext bolder-text">{forecast.deaths.toLocaleString("en-US")}</td>
               </tr>
             )}
           </tbody>

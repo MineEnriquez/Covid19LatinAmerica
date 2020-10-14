@@ -1199,6 +1199,12 @@
 	.red {
 		color: red;
 	}
+
+	/* bolder text */
+	.bolder-text{
+		font-family: Arial, Helvetica, sans-serif;
+	}
+
 /* Small */
 
 	@include breakpoint(small) {
