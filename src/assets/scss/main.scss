@@ -706,7 +706,9 @@
 		}
 
 		td {
-			padding: 0.75em 0.75em;
+			padding: 0.75em 0.50em;
+			text-align: center;
+			word-wrap:break-word;
 		}
 
 		th {
@@ -714,7 +716,7 @@
 			font-size: 1.00em;
 			font-weight: _font(weight-bold);
 			padding: 0.80em 0.75em 0.25em 0.75em;
-			text-align: left;
+			text-align: center;
 			// background-color: saturation($color: #000000);
 		}
 

@@ -67,7 +67,8 @@ class FetchDataVirus extends Component {
   }
 
   addLatamCountries() {
-    /* Prioritizing the list o LATAM countries */
+    /* Prioritizing the list to hispanic communities */
+    this.countries.push("US");
     this.countries.push("Argentina");
     this.countries.push("Bolivia");
     this.countries.push("Brazil");
@@ -89,7 +90,7 @@ class FetchDataVirus extends Component {
     this.countries.push("Puerto Rico");
     this.countries.push("Uruguay");
     this.countries.push("Venezuela");
-    this.countries.push("____________________________");
+    this.countries.push("--- Otros paises ---");
   }
 
   handleSort(e) {
@@ -133,8 +134,8 @@ class FetchDataVirus extends Component {
           <tbody>
             {tabledata.map(forecast =>
               <tr role='row' key={forecast.keyId}>
-                <td className="small-text bolder-text">{forecast.country}</td>
-                <td className="small-text bolder-text">{forecast.prov}</td>
+                <td className="bolder-text">{forecast.country}</td>
+                <td className="bolder-text">{forecast.prov}</td>
                 <td>{forecast.confirmed.toLocaleString("en-US")}</td>
                 <td className="redtext bolder-text">{forecast.deaths.toLocaleString("en-US")}</td>
               </tr>
