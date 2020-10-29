@@ -38,11 +38,18 @@ class FetchDataVirus extends Component {
         for (var i = 0; i < this.dataset.length; i++) {
           sum = sum + this.dataset[i].deaths;
           cases = cases + this.dataset[i].confirmed;
-          if (this.countries.length < 189) {
-            if (this.countries.indexOf(this.dataset[i].country) === -1) this.countries.push(this.dataset[i].country);
-          }
+          if (this.countries.indexOf(this.dataset[i].country) === -1) 
+            this.countries.push(this.dataset[i].country);
+          
           let removestr = ", " + this.dataset[i].country;
           this.dataset[i].prov = this.dataset[i].keyId.replace(removestr, "");
+
+          this.dataset[i].confirmed === null ? this.dataset[i].confirmed = 0
+            : this.dataset[i].confirmed = this.dataset[i].confirmed.toLocaleString("en-US");
+
+          this.dataset[i].deaths === null ? this.dataset[i].deaths = 0
+            : this.dataset[i].deaths = this.dataset[i].deaths.toLocaleString("en-US");
+
         }
         /* Component:  Set State*/
         this.setState({
@@ -68,29 +75,31 @@ class FetchDataVirus extends Component {
 
   addLatamCountries() {
     /* Prioritizing the list to hispanic communities */
-    this.countries.push("US");
-    this.countries.push("Argentina");
-    this.countries.push("Bolivia");
-    this.countries.push("Brazil");
-    this.countries.push("Chile");
-    this.countries.push("Colombia");
-    this.countries.push("Costa Rica");
-    this.countries.push("Cuba");
-    this.countries.push("Dominican Republic");
-    this.countries.push("Ecuador");
-    this.countries.push("El Salvador");
-    this.countries.push("Guatemala");
-    this.countries.push("Haiti");
-    this.countries.push("Honduras");
-    this.countries.push("Mexico");
-    this.countries.push("Nicaragua");
-    this.countries.push("Panama");
-    this.countries.push("Paraguay");
-    this.countries.push("Peru");
-    this.countries.push("Puerto Rico");
-    this.countries.push("Uruguay");
-    this.countries.push("Venezuela");
-    this.countries.push("--- Otros paises ---");
+    if (this.countries.indexOf("US") === -1) {
+      this.countries.push("US");
+      this.countries.push("Argentina");
+      this.countries.push("Bolivia");
+      this.countries.push("Brazil");
+      this.countries.push("Chile");
+      this.countries.push("Colombia");
+      this.countries.push("Costa Rica");
+      this.countries.push("Cuba");
+      this.countries.push("Dominican Republic");
+      this.countries.push("Ecuador");
+      this.countries.push("El Salvador");
+      this.countries.push("Guatemala");
+      this.countries.push("Haiti");
+      this.countries.push("Honduras");
+      this.countries.push("Mexico");
+      this.countries.push("Nicaragua");
+      this.countries.push("Panama");
+      this.countries.push("Paraguay");
+      this.countries.push("Peru");
+      this.countries.push("Puerto Rico");
+      this.countries.push("Uruguay");
+      this.countries.push("Venezuela");
+      this.countries.push("--- Otros paises ---");
+    }
   }
 
   handleSort(e) {
@@ -136,8 +145,8 @@ class FetchDataVirus extends Component {
               <tr role='row' key={forecast.keyId}>
                 <td className="bolder-text">{forecast.country}</td>
                 <td className="bolder-text">{forecast.prov}</td>
-                <td>{forecast.confirmed.toLocaleString("en-US")}</td>
-                <td className="redtext bolder-text">{forecast.deaths.toLocaleString("en-US")}</td>
+                <td>{forecast.confirmed}</td>
+                <td className="redtext bolder-text">{forecast.deaths}</td>
               </tr>
             )}
           </tbody>
@@ -160,8 +169,8 @@ class FetchDataVirus extends Component {
             {tabledata.map(forecast =>
               <tr role='row' key={forecast.keyId}>
                 <td className="small-text bolder-text">{forecast.prov}</td>
-                <td className="bolder-text">{forecast.confirmed.toLocaleString("en-US")}</td>
-                <td className="redtext bolder-text">{forecast.deaths.toLocaleString("en-US")}</td>
+                <td className="bolder-text">{forecast.confirmed}</td>
+                <td className="redtext bolder-text">{forecast.deaths}</td>
               </tr>
             )}
           </tbody>
