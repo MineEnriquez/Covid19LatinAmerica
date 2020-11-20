@@ -5,6 +5,13 @@
     Source: https://rapidapi.com/KishCom/api/covid-19-coronavirus-statistics/details
     Params: country=MyCountryName
 
+# Interactive Map:
+    iFrame: https://www.arcgis.com/apps/opsdashboard/index.html#/bda7594740fd40299423467b48e9ecf6 
+
+# Additional sources of information:
+    https://www.paho.org/es/temas/coronavirus/brote-enfermedad-por-coronavirus-covid-19
+    https://ais.paho.org/phip/viz/COVID19Rt.asp 
+
 # gatsby-starter-photon
 
 Gatsby.js V2 starter based on the Photon site template, designed by HTML5 UP. Check out https://codebushi.com/gatsby-starters-and-themes/ for more Gatsby starters and templates.

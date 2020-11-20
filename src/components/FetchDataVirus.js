@@ -189,7 +189,12 @@ class FetchDataVirus extends Component {
         contents = FetchDataVirus.renderCountryTable(this.state.tabledata);
       }
     }
-
+    let interactiveMapUrl;
+    if (window.innerWidth > 480){
+      interactiveMapUrl = "https://www.arcgis.com/apps/opsdashboard/index.html#/bda7594740fd40299423467b48e9ecf6";
+    } else {
+      interactiveMapUrl = "https://www.arcgis.com/apps/opsdashboard/index.html#/85320e2ea5424dfaaa75ae62e5c06e61";
+    }
     return (
       <div>
         <section id="filteringAndSorting" className="submain style1">
@@ -235,6 +240,10 @@ class FetchDataVirus extends Component {
             {contents}
           </div>
           <p className='small-text'> * This program uses an API with publicly available data about current confirmed cases, deaths, and recoveries of the COVID-19 virus AKA Coronavirus compiled by Johns Hopkins University. </p>
+        </section>
+        <section>
+          <h3>Mapa interactivo:</h3>
+          <div className="embed-container"><iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0" title="COVID-19" src={interactiveMapUrl}></iframe></div>         
         </section>
       </div>
     );
