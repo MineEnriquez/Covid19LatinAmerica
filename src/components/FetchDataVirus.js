@@ -189,8 +189,9 @@ class FetchDataVirus extends Component {
       }
     }
     let interactiveMapUrl;
-    const windowGlobal = typeof window !== 'undefined' && window;
-    if (windowGlobal.innerWidth > 480){
+    let windowGlobal = typeof window !== 'undefined' && window;
+    console.log(windowGlobal.innerWidth);
+    if (windowGlobal.innerWidth > 390){
       interactiveMapUrl = "https://www.arcgis.com/apps/opsdashboard/index.html#/bda7594740fd40299423467b48e9ecf6";
     } else {
       interactiveMapUrl = "https://www.arcgis.com/apps/opsdashboard/index.html#/85320e2ea5424dfaaa75ae62e5c06e61";
