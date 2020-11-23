@@ -101,7 +101,6 @@ class FetchDataVirus extends Component {
       this.countries.push("--- Otros paises ---");
     }
   }
-
   handleSort(e) {
     /* Custom Sort*/
     console.log(e.target.value);
@@ -190,7 +189,8 @@ class FetchDataVirus extends Component {
       }
     }
     let interactiveMapUrl;
-    if (window.innerWidth > 480){
+    const windowGlobal = typeof window !== 'undefined' && window;
+    if (windowGlobal.innerWidth > 480){
       interactiveMapUrl = "https://www.arcgis.com/apps/opsdashboard/index.html#/bda7594740fd40299423467b48e9ecf6";
     } else {
       interactiveMapUrl = "https://www.arcgis.com/apps/opsdashboard/index.html#/85320e2ea5424dfaaa75ae62e5c06e61";
@@ -243,7 +243,7 @@ class FetchDataVirus extends Component {
         </section>
         <section>
           <h3>Mapa interactivo:</h3>
-          <div className="embed-container"><iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0" title="COVID-19" src={interactiveMapUrl}></iframe></div>         
+          <div className="embed-container"><iframe frameBorder="0" scrolling="no" marginHeight="0" marginWidth="0" title="COVID-19" src={interactiveMapUrl}></iframe></div>         
         </section>
       </div>
     );
