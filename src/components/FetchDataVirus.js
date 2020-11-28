@@ -45,10 +45,10 @@ class FetchDataVirus extends Component {
           this.dataset[i].prov = this.dataset[i].keyId.replace(removestr, "");
 
           this.dataset[i].confirmed === null ? this.dataset[i].confirmed = 0
-            : this.dataset[i].confirmed = this.dataset[i].confirmed.toLocaleString("en-US");
+            : this.dataset[i].confirmed = this.dataset[i].confirmed;
 
           this.dataset[i].deaths === null ? this.dataset[i].deaths = 0
-            : this.dataset[i].deaths = this.dataset[i].deaths.toLocaleString("en-US");
+            : this.dataset[i].deaths = this.dataset[i].deaths;
 
         }
         /* Component:  Set State*/
@@ -144,8 +144,8 @@ class FetchDataVirus extends Component {
               <tr role='row' key={forecast.keyId}>
                 <td className="bolder-text">{forecast.country}</td>
                 <td className="bolder-text">{forecast.prov}</td>
-                <td>{forecast.confirmed}</td>
-                <td className="redtext bolder-text">{forecast.deaths}</td>
+                <td>{forecast.confirmed.toLocaleString("en-US")}</td>
+                <td className="redtext bolder-text">{forecast.deaths.toLocaleString("en-US")}</td>
               </tr>
             )}
           </tbody>
@@ -168,8 +168,8 @@ class FetchDataVirus extends Component {
             {tabledata.map(forecast =>
               <tr role='row' key={forecast.keyId}>
                 <td className="small-text bolder-text">{forecast.prov}</td>
-                <td className="bolder-text">{forecast.confirmed}</td>
-                <td className="redtext bolder-text">{forecast.deaths}</td>
+                <td className="bolder-text">{forecast.confirmed.toLocaleString("en-US")}</td>
+                <td className="redtext bolder-text">{forecast.deaths.toLocaleString("en-US")}</td>
               </tr>
             )}
           </tbody>
