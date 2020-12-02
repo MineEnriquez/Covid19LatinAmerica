@@ -29,7 +29,7 @@ class Homepage extends React.Component {
                             </header>
                             <p>En un evento sin  precedente, la sociedad a nivel mundial ha tenido que
                             implementar el distanciamiento social en un esfuerzo por disminuir
-                                el esparcimiento del nuevo Corona Virus "Covid19".<br />
+                                el esparcimiento del nuevo Corona Virus "Covid19".  <br />
                                 ¿Porque es tan importante evitar ser contagiado?
                             </p>
                             <li>Si tienes el virus puedes infectar a más personas</li>
@@ -37,7 +37,7 @@ class Homepage extends React.Component {
                             <li>No hay vacuna ni tratamiento especifíco</li>
                             <li>Puede causar la muerte</li>
                             <li>No hay suficiente información sobre los daños que pueda causar al organismo</li>
-                            <li>Si presentas síntomas, estos pueden presentarse de uno a doce dias después de haberte infectado,
+                            <li>Si presentas síntomas, estos pueden presentarse de dos a catorce dias después de haberte infectado,
                                 para ese entonces, podrias ya haber afectado a tus seres queridos.</li>
                             <p><a href="https://www.who.int/es">Organización Mundial de la Salud</a></p>
                             {/*Sintomas de la enfermedad: https://who.canto.global/b/JKJTT */}
