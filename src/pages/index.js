@@ -156,7 +156,7 @@ class Homepage extends React.Component {
                             <h3>Preguntas y respuestas</h3>
                             <p>Preguntas y respuestas sobre la enfermedad por coronavirus (COVID-19).</p>
                             <ul className="actions">
-                                <li><a href="https://www.who.int/es/emergencies/diseases/novel-coronavirus-2019/advice-for-public/q-a-coronaviruses" className="button">Mas información</a></li>
+                                <li><a href="https://www.who.int/es/emergencies/diseases/novel-coronavirus-2019/question-and-answers-hub/q-a-detail/coronavirus-disease-covid-19" className="button">Mas información</a></li>
                             </ul>
                         </div>
 
