@@ -27,9 +27,17 @@ class Homepage extends React.Component {
                                 <h2>Mantenerte informado  <br />
                                 ayuda a proteger a tu familia</h2>
                             </header>
-                            <p>En un evento sin  precedente, la sociedad a nivel mundial ha tenido que
-                            implementar el distanciamiento social en un esfuerzo por disminuir
-                                el esparcimiento del nuevo Corona Virus "Covid19".  <br />
+                            
+                            <h3> Actualizaciones: </h3>
+                            <p>
+                                <li>
+                                    <a href="https://www.paho.org/es/covax-americas"> Las vacunas llegan a Centro y Sudamerica </a>
+                                </li>
+                                <li>
+                                    <a href="https://www.paho.org/es"> Organizacion Panamericana de la Salud:  </a>
+                                </li>
+                            </p>
+                            <p>Ayuda a disminuir el esparcimiento del Corona Virus "Covid19" y sus variantes. 
                                 ¿Porque es tan importante evitar ser contagiado?
                             </p>
                             <li>Si tienes el virus puedes infectar a más personas</li>
