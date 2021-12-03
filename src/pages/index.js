@@ -31,7 +31,13 @@ class Homepage extends React.Component {
                             <h3> Actualizaciones: </h3>
                             <p>
                                 <li>
-                                    <a href="https://www.paho.org/es/covax-americas"> Las vacunas llegan a Centro y Sudamerica </a>
+                                    <a href="https://www.paho.org/es/noticias/3-12-2021-omicron-otras-variantes-preocupacion-identificadas-americas"> Omicron y otras variantes de preocupación identificadas en las Américas </a>
+                                </li>
+                                <li>
+                                    <a href="https://www.paho.org/es/noticias/1-12-2021-oms-situacion-actual-relativa-variante-omicron"> Omicron, un peligro latente </a>
+                                </li>
+                                <li>
+                                    <a href="https://www.paho.org/es/covax-americas"> Las vacunas en Centro y Sudamerica </a>
                                 </li>
                                 <li>
                                     <a href="https://www.paho.org/es"> Organizacion Panamericana de la Salud:  </a>
