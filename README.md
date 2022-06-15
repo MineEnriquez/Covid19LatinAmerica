@@ -1,3 +1,6 @@
+# Covid 19 Latino Site:
+https://covid19latino.org/
+
 # Sources of Information:
 *Sintomas de la enfermedad: https://who.canto.global/b/JKJTT 
 
