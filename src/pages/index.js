@@ -36,16 +36,6 @@ class Homepage extends React.Component {
                                     <a href="https://proempleo.org.mx/inicio/index.html"> Fundación ProEmpleo </a>
                                 </li>
                             </p>
-                        </div>
-
-                    </div>
-                    <div className="grid-wrapper">
-                        <div className="col-6">
-                            <header className="major">
-                                <h2>Mantenerte informado  <br />
-                                ayuda a proteger a tu familia</h2>
-                            </header>
-                            
                             <h3> Actualizaciones: </h3>
                             <p>
                                 <li>
@@ -61,6 +51,15 @@ class Homepage extends React.Component {
                                     <a href="https://www.paho.org/es"> Organizacion Panamericana de la Salud:  </a>
                                 </li>
                             </p>
+                        </div>
+
+                    </div>
+                    <div className="grid-wrapper">
+                        <div className="col-6">
+                            <header className="major">
+                                <h2>Mantenerte informado  <br />
+                                ayuda a proteger a tu familia</h2>
+                            </header>
                             <p>Ayuda a disminuir el esparcimiento del Corona Virus "Covid19" y sus variantes. 
                             </p>
                             <li>Si tienes el virus puedes infectar a más personas</li>
