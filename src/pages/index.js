@@ -7,6 +7,7 @@ import { Player } from 'video-react';
 import Layout from '../components/layout';
 
 import covidpic01 from '../assets/images/covidimg/pic01.jpg'
+import covidpic03 from '../assets/images/covidimg/pic27.jpg'
 import covidpic02 from '../assets/images/covidimg/poster01.png'
 import pic06 from '../assets/images/covidimg/pic06.jpg'
 import pic03 from '../assets/images/covidimg/pic03.jpg'
@@ -21,6 +22,23 @@ class Homepage extends React.Component {
             <Layout>
                 <Helmet title={siteTitle} />
                 <section id="one" className="main style1">
+                    <div className="grid-wrapper">
+                        <div className="col-6">
+                            <span className="image fit"><img src={covidpic03} alt="" /></span>
+                        </div>
+                        <div className="col-6">
+                            <header className="major">
+                                <h2>Volver a Iniciar  </h2>
+                            </header>
+                            <h3> Recursos para  la poblacion: </h3>
+                            <p>
+                                <li>
+                                    <a href="https://proempleo.org.mx/inicio/index.html"> Fundación ProEmpleo </a>
+                                </li>
+                            </p>
+                        </div>
+
+                    </div>
                     <div className="grid-wrapper">
                         <div className="col-6">
                             <header className="major">
@@ -44,13 +62,10 @@ class Homepage extends React.Component {
                                 </li>
                             </p>
                             <p>Ayuda a disminuir el esparcimiento del Corona Virus "Covid19" y sus variantes. 
-                                ¿Porque es tan importante evitar ser contagiado?
                             </p>
                             <li>Si tienes el virus puedes infectar a más personas</li>
                             <li>Podrías tener el virus y no presentar síntomas</li>
-                            <li>No hay vacuna ni tratamiento especifíco</li>
-                            <li>Puede causar la muerte</li>
-                            <li>No hay suficiente información sobre los daños que pueda causar al organismo</li>
+                            <li>Aun es mortal para algunas personas</li>
                             <li>Si presentas síntomas, estos pueden presentarse de dos a catorce dias después de haberte infectado,
                                 para ese entonces, podrias ya haber afectado a tus seres queridos.</li>
                             <p><a href="https://www.who.int/es">Organización Mundial de la Salud</a></p>
