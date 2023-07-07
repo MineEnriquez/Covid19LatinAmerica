@@ -26,7 +26,7 @@ https://gatsby-photon.surge.sh
 ## Installation
 
 Install this starter (assuming Gatsby is installed) by running from your CLI:
-`gatsby new gatsby-starter-photon https://github.com/codebushi/gatsby-starter-photon`
+`gatsby new gatsby-starter-photon https://github.com/<new repo owner>/gatsby-starter-photon`
 
 Run `gatsby develop` in the terminal to start.
 
